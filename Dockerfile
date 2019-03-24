@@ -24,4 +24,3 @@ ADD Gemfile.lock $APP_HOME/Gemfile.lock
 RUN bundle install --jobs=3 --retry=3
 
 ADD . $APP_HOME
-USER pablo
