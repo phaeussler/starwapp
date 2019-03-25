@@ -4,7 +4,7 @@ class StarshipsController < ApplicationController
   # GET /starships
   # GET /starships.json
   def index
-    @starships = Starship.all
+    @starships = get_all('starships')
   end
 
   # GET /starships/1

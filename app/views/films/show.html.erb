@@ -22,21 +22,22 @@
 </p>
 
 <p>
-  <strong>Release_date:</strong>
+  <strong>Release date:</strong>
   <%= @film['release_date'] %>
 </p>
 
 <p>
   <strong>Characters:</strong>
-  <% @film['characters'].each do |character| %>
-    <p><%= get_name(character) %></p>
+  <% @film['characters'].each do |person| %>
+    <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %></p>
   <% end %>
 </p>
  
+
 <p>
   <strong>Planets:</strong>
   <% @film['planets'].each do |planet| %>
-    <p><%= get_name(planet) %></p>
+    <p><%= link_to get_name(planet, 'name'), planet_path(get_id(planet,'planets')) %></p>
   <% end %>
 </p>
 
@@ -44,18 +45,8 @@
 <p>
   <strong>Starships:</strong>
   <% @film['starships'].each do |starship| %>
-    <p><%= get_name(starship) %></p>
+    <p><%= link_to get_name(starship, 'name'), starship_path(get_id(starship,'starships')) %></p>
   <% end %>
-</p>
-
-<p>
-  <strong>Created:</strong>
-  <%= @film['created'] %>
-</p>
-
-<p>
-  <strong>Edited:</strong>
-  <%= @film['edited'] %>
 </p>
 
 <%= link_to 'Back', films_path %>

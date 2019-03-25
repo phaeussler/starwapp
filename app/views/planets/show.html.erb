@@ -7,47 +7,49 @@
 </p>
 
 <p>
-  <strong>orbital_period:</strong>
+  <strong>Orbital period:</strong>
   <%= @planet['orbital_period'] %>
 </p>
 
 <p>
-  <strong>diameter:</strong>
+  <strong>Diameter:</strong>
   <%= @planet['diameter'] %>
 </p>
 
 <p>
-  <strong>climate:</strong>
+  <strong>Climate:</strong>
   <%= @planet['climate'] %>
 </p>
 
 <p>
-  <strong>gravity:</strong>
+  <strong>Gravity:</strong>
   <%= @planet['gravity'] %>
 </p>
 
 <p>
-  <strong>terrain:</strong>
+  <strong>Terrain:</strong>
   <%= @planet['terrain'] %>
 </p>
 
 <p>
-  <strong>surface_water:</strong>
+  <strong>Surface water:</strong>
   <%= @planet['surface_water'] %>
 </p>
 
 <p>
-  <strong>population:</strong>
+  <strong>Population:</strong>
   <%= @planet['population'] %>
 </p>
 
 <p>
-  <strong>residents:</strong>
-  <%= @planet['residents'] %>
+  <strong>Residents:</strong>
+  <% @planet['residents'].each do |person| %>
+    <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %></p>
+  <% end %>
 </p>
 
 <p>
-  <strong>films:</strong>
+  <strong>Films:</strong>
   <% @planet['films'].each do |film| %>
     <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films')) %></p>
   <% end %>
