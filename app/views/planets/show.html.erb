@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @planet['name'] %></h1>
+
+<p>
+  <strong>Episode:</strong>
+  <%= @planet['rotation_period'] %>
+</p>
+
+<p>
+  <strong>orbital_period:</strong>
+  <%= @planet['orbital_period'] %>
+</p>
+
+<p>
+  <strong>diameter:</strong>
+  <%= @planet['diameter'] %>
+</p>
+
+<p>
+  <strong>climate:</strong>
+  <%= @planet['climate'] %>
+</p>
+
+<p>
+  <strong>gravity:</strong>
+  <%= @planet['gravity'] %>
+</p>
+
+<p>
+  <strong>terrain:</strong>
+  <%= @planet['terrain'] %>
+</p>
+
+<p>
+  <strong>surface_water:</strong>
+  <%= @planet['surface_water'] %>
+</p>
+
+<p>
+  <strong>population:</strong>
+  <%= @planet['population'] %>
+</p>
+
+<p>
+  <strong>residents:</strong>
+  <%= @planet['residents'] %>
+</p>
+
+<p>
+  <strong>films:</strong>
+  <% @planet['films'].each do |film| %>
+    <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films')) %></p>
+  <% end %>
+</p>
+
+
+<%= link_to 'Back', planets_path %>

@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+ ul {
+    position: sticky;
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4caf50;
+    z-index:999;
+}
+
+li {
+    float: left;
+    font-weight: 700;
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #99E75E;
+}
+
+.text_button {
+  padding: 20px 16px;
+  color:white;
+  font-size: 14px;
+}

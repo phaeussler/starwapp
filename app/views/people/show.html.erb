@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @person['name'] %></h1>
+
+<p>
+  <strong>Heigh:</strong>
+  <%= @person['height'] %>
+</p>
+
+
+<p>
+  <strong>mass:</strong>
+  <%= @person['mass'] %>
+</p>
+
+<p>
+  <strong>hair_color:</strong>
+  <%= @person['hair_color'] %>
+</p>
+
+<p>
+  <strong>skin_color:</strong>
+  <%= @person['skin_color'] %>
+</p>
+
+<p>
+  <strong>eye_color:</strong>
+  <%= @person['eye_color'] %>
+</p>
+
+<p>
+  <strong>birth_year:</strong>
+  <%= @person['birth_year'] %>
+</p>
+
+<p>
+  <strong>gender:</strong>
+  <%= @person['gender'] %>
+</p>
+
+<p>
+  <strong>homeworld:</strong>
+  <%= @person['homeworld'] %>
+</p>
+
+<p>
+  <strong>films:</strong>
+  <% @person['films'].each do |film| %>
+    <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films')) %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>starships:</strong>
+  <%= @person['starships'] %>
+</p>
+
+
+<%= link_to 'Back', people_path %>
